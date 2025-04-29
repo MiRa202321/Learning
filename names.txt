@@ -1,7 +1,2 @@
-hello there. 
-learning git  and GitHub.
-using vi
-:x
-
-:X
-
+Hello there 
+learning git
