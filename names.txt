@@ -1,7 +1,0 @@
-hello there. 
-learning git  and GitHub.
-using vi
-:x
-
-:X
-
