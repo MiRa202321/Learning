@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class RowColMatrix { //array is sorted row as well as column wise
-    //not done
+
     public static void main(String[] args) {
         int[][] arr={
                 {10,20,40},
