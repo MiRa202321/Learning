@@ -12,5 +12,6 @@ public class Main {
         Singleton obj3 = Singleton.getInstance();
 
         //all 3 ref var are pointing to just one obj
+
     }
 }
