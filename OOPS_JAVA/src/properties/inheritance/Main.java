@@ -39,6 +39,6 @@ public class Main {
       Box.greeting();
 
       Box box=  new BoxWeight();
-      box.greeting(); 
+      box.greeting();
     }
 }
