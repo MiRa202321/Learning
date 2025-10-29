@@ -1,4 +1,4 @@
 public class Pattern1 {
-    // the basic pattern
-    // next pattern
+   //basics of pattern - square
+
 }
