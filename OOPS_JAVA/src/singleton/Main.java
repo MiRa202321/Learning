@@ -1,5 +1,7 @@
 package singleton;
 
+import access.A;
+
 public class Main {
     public static void main(String[] args) {
 //        Singleton obj= new Singleton();
@@ -13,5 +15,7 @@ public class Main {
 
         //all 3 ref var are pointing to just one obj
 
+        A a= new A(12,"bdjbvd");  //import the class from access package
+        a.getNum(); //since num is private so use getter
     }
 }
