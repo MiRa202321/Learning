@@ -15,3 +15,12 @@ public class Comparison {
 //        System.out.println(a == b );   //false
     }
 }
+
+
+// 1. == : checks if ref var are pointing to same object
+// how to create a new object:
+//                          String a = new String("Rashmi")
+//                          String b = new String("Rashmi")  //creates obj outside the pool but in heap
+
+
+//2. when only need to check va;ue:  st1.equals(st2)
