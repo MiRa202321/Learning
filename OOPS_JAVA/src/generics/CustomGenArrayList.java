@@ -2,27 +2,20 @@ package generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-public class CustomArrayList {
+//Refer ORACLE DOCS: https://docs.oracle.com/javase/tutorial/java/generics/index.html
+// Restrictions on Generics: https://docs.oracle.com/javase/tutorial/java/generics/restrictions.html
+public class CustomGenArrayList<T> {
 //Creating our own arraylist
-    private int[] data;
-
-
-//Problem: we can have only a integer as input, but in ArrayList we can input various type of values
-    ArrayList<Integer> arr = new ArrayList<>();
-//  <Integer>: This helps us specify the type of input.
-//    These are Generics: parameterized type
-
-
-
+    private Object[]  data;
     private static int DEFAULT_SIZE =10;
     private int size = 0;
 
-    public CustomArrayList(){
-        this.data = new int[DEFAULT_SIZE];
+    public CustomGenArrayList(){
+
+        this.data = new Object[DEFAULT_SIZE];
     }
 
-    public void add(int num){
+    public void add(T num){
         if(isFull()){
             resize();
         }
@@ -30,7 +23,7 @@ public class CustomArrayList {
     }
 
     private void resize() {
-        int[] temp = new int[data.length * 2];
+        Object[] temp = new Object[data.length * 2];
 
         // copy the current items in the new array
         for (int i=0;i< data.length; i++){
@@ -43,21 +36,21 @@ public class CustomArrayList {
         return size == data.length;
     }
 
-    public int remove(){
-        int removed = data[--size];
+    public T remove(){
+        T removed = (T) data[--size];      //Type casting allowed but redundant fo some case
         //override the old value whenever we add a new item
         return removed;
    }
 
-   public int get(int index){
-        return data[index];
+   public T get(int index){
+        return (T) data[index];
    }
 
    public int size(){
         return size;
    }
 
-   public void set(int index, int value){
+   public void set(int index, T value){
         data[index] =  value;
    }
 
@@ -70,16 +63,23 @@ public class CustomArrayList {
     }
 
     public static void main(String[] args) {
-        CustomArrayList list = new CustomArrayList();
+//        CustomGenArrayList<Integer> list = new CustomGenArrayList();
 //        list.add(3);
 //        list.add(5);
 //        list.add(7);
 
-        for (int i = 0; i < 14; i++) {
-            list.add(2*i);
-        }
+//        for (int i = 0; i < 14; i++) {
+//            list.add(2*i);
+//        }
+//
+//        System.out.println(list);
 
-        System.out.println(list);
+
+        CustomGenArrayList<Integer> list2 = new CustomGenArrayList<>();
+        for (int i = 0; i < 14;i++) {
+            list2.add(2*i);
+        }
+        System.out.println(list2);
     }
 }
 
